@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/2b689e2db08845bf3c28/maintainability)](https://codeclimate.com/github/gauravtiwari/ruby_graphiql_explorer/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2b689e2db08845bf3c28/test_coverage)](https://codeclimate.com/github/gauravtiwari/ruby_graphiql_explorer/test_coverage)
+![Rspec](https://github.com/gauravtiwari/ruby_graphiql_explorer/workflows/Rspec/badge.svg)
+
 # Ruby Graphiql Explorer
 
 Super simple rack app to render GraphiQL editor into a Ruby or Rails web app.
