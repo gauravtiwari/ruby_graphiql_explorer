@@ -1,19 +1,14 @@
-name: build
-
+name: Rspec
 on: [push, pull_request]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
-
       - name: Install Ruby (2.6)
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
-
       - name: Setup Code Climate test-reporter
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
