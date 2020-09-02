@@ -9,6 +9,13 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
+      - name: Cache Ruby gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: Setup Code Climate test-reporter
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -16,6 +23,7 @@ jobs:
           ./cc-test-reporter before-build
       - name: Build and test with RSpec
         run: |
+          bundle config path vendor/bundle
           gem install bundler
           bundle install --jobs 4 --retry 3
           bundle exec rspec
