@@ -35,14 +35,14 @@ mount RubyGraphiqlExplorer::App, at: "/graphiql"
 Using `config.ru`
 
 ```rb
-require 'ruby_graphiql_explorer'
+require "ruby_graphiql_explorer"
 run RubyGraphiqlExplorer::App
 ```
 
 Using `Rack::URLMap`
 
 ```rb
-require 'ruby_graphiql_explorer'
+require "ruby_graphiql_explorer"
 run Rack::URLMap.new("/graphiql" => RubyGraphiqlExplorer::App)
 ```
 
