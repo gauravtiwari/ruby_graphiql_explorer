@@ -46,6 +46,16 @@ require "ruby_graphiql_explorer"
 run Rack::URLMap.new("/graphiql" => RubyGraphiqlExplorer::App)
 ```
 
+By default the rack app expects GraphQL endpoint to be available at
+`http://localhost::3000/graphql` but you can override using
+`GRAPHQL_API_URL` env variable. Additionally, you can set api key/token using
+`GRAPHQL_API_KEY` if your GraphQL API is protected.
+
+```yml
+GRAPHQL_API_URL: http://localhost::3000/api
+GRAPHQL_API_KEY: foobar
+```
+
 ## Development
 
 After checking out the repo, run `bundle` to install dependencies. Then, run `bundle exec rspec spec` to run the tests.
