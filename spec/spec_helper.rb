@@ -2,6 +2,9 @@
 require "rack/app"
 require "rack/app/test"
 require "ruby_graphiql_explorer"
+require "simplecov"
+
+SimpleCov.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
