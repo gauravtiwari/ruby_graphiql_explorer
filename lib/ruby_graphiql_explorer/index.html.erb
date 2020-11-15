@@ -21,11 +21,11 @@
 
     <script>
       const graphQLFetcher = (graphQLParams) =>
-        fetch('<%= ENV.fetch('GRAPHQL_API_URL', 'http://localhost:3000/graphql') %>', {
+        fetch('<%= ENV.fetch('GRAPHQL_API_URL', '/graphql') %>', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: '<%= ENV.fetch('GRAPHQL_API_KEY', '') %>'
+            Authorization: 'Bearer <%= ENV.fetch('GRAPHQL_API_KEY', '') %>'
           },
           body: JSON.stringify(graphQLParams)
         })
